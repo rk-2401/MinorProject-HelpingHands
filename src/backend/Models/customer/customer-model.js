@@ -6,13 +6,37 @@ const customerSchema = new mongoose.Schema({
         required: true,
     },
     address: {
-        addressLine1: String,
-        addressLine2: String,
-        city: String,
-        State: String,
-        PinCode: Number,
+        addressLine1: {
+            type: String,
+            required: true,
+        },
+        addressLine2: {
+            type: String,
+        },
+        city: {
+            type: String,
+            required: true,
+        },
+        state: {
+            type: String,
+            required: true,
+        },
+        pinCode: {
+            type: Number,
+            required: true,
+        },
     },
-    mobile: [Number]
+    contact: {
+        primary: {
+            type: Number,
+            unique: true,
+            required: true,
+        },
+        alternate: {
+            type: Number,
+            unique: true,
+        }
+    },
 });
 
 export const Customer = mongoose.model('customer', customerSchema);
