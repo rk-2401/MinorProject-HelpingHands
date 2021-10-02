@@ -6,13 +6,3 @@ require('dotenv').config({
 import { User } from './src/backend/Models/user/user-model';
 
 start();
-
-async function test() {
-    const user = new User({
-        email: 'sajid.anis20@gmail.com',
-        password: 'Sajid',
-        userType: 'admin',
-    });
-    await user.save();
-    console.log(user);
-}
