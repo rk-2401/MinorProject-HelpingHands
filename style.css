@@ -1,11 +1,14 @@
-html,body,div{
+*{
     padding: 0px;
     margin: 0px;
     padding-block-end: 0px;
     margin-block-end: 0px;
 }
 
+
+
 #header{
+    z-index: 10;
     display: flex;
     flex-direction: column;
     padding: 0.1vw;
@@ -21,7 +24,7 @@ html,body,div{
 }
 
 #div-company-logo{
-    padding: 0px;
+    padding-top: 0.3vw;
     margin: 0px;
 }
 #company-logo{
@@ -35,6 +38,7 @@ html,body,div{
     color: white;
     font-size: 2.8vw;
     font-family: 'Oleo Script','cursive';
+    margin-bottom: 0px;
 }
 
 #tagline{
@@ -43,7 +47,7 @@ html,body,div{
     font-size: 1.5vw;
     color:whitesmoke;
     background-color:black;
-    
+    margin-bottom: 0px;
     padding-bottom: 0.4vw;
 }
 
@@ -53,12 +57,98 @@ p{
     display: block;
 }
 #menu-btn{
-    padding:0px;
-    cursor: pointer;
-    
+    padding:1.1vw;
+    cursor: pointer;    
 }
 
+#menu-btn-navbar{
+    padding:1.1vw;
+    cursor: pointer;    
+}
 
+.dashes{
+    color: #ff4f59;
+}
+
+#nav-bar {
+    width: 20vw;
+    font-size: larger;
+    font-weight: 600;
+    background-color:black;
+    color: #ff4f59;
+    position: absolute;
+    margin-top: 1.1vw;  
+    margin-left: -0.1vw;
+    padding-left: 1vw;
+    border-bottom-right-radius: 1.5%;
+}
+
+#contact-opt{
+    padding-bottom: 1.2vw;
+}
+
+#home-opt{
+    padding-top: 1vw;
+}
+
+.navbar-options a{
+    text-decoration: none;
+    color: #cf4f59;
+}
+
+.navbar-options a:hover{
+    color: white;
+}
+
+.navbar-options:hover{
+    color: aliceblue;
+    cursor: pointer;
+}
+
+#nav-bar img{
+    width: 2vw;
+    height: 2vw;
+}
+
+.nav-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #cf4f59;
+    color: black;
+}
+
+#div-navbar-img{
+    display: inline;
+}
+.row-centre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding-bottom: 0.6vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: larger;
+}
+.row-se{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding-bottom: 0.6vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: larger;
+}
+.Col{
+    display: flex;
+    flex-direction: column;
+}
 
 #div-logo-name-header{
     display: flex;
@@ -66,12 +156,13 @@ p{
     justify-content: space-between;
 }
 
-.menu-btn-line{
+hr.menu-btn-line{
     width: 2.6vw;
-    height: 0.2vw;
-    background-color: whitesmoke;
-    border-radius: 20%;
+    background-color: white;
+    border-radius: 10%;
     margin: 0.4vw;
+    padding: 0.15vw;
+    opacity: 100%;
 }
 
 .login-btn{
@@ -82,9 +173,12 @@ p{
     border-radius: 0.5vw;
     border: none;
     color: white;
+    padding: 0px;
+    margin: 0px;
 }
 .login-btn:hover{
     color:black;
+    cursor: pointer;
 }
 #test-div{
     background-color: black;
@@ -102,40 +196,130 @@ p{
 #user{
     display: flex;
     flex-direction: row;
+    padding: 1.6vw;
 }
-
+button{
+    cursor: pointer;
+    padding: 0.5vw;
+}
 #user-icon{
     padding-right: 1vw;
 }
 
-#carousel{
-    padding-top: 35vh;
-    padding-bottom: 35vh;
+div .carousel-caption{
+    text-align: left;
+    display: inline-block;
+    left: 30%;
+    bottom:30%;
+}
+div .carousel-caption h5{
+    font-size: 4vw;
+}
+div .carousel-item img{
+    opacity: 85%;
+}
+#services-heading{
+    padding: 0.5vw;
+    margin: 4vw 0vw 3.5vw 0vw;
+    display: inline-block;
+    border: black dashed 2px;
+    border-radius: 3%;
+}
+
+#services{
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+
+#services .col{
+    width: 22%;
+    margin: 1vw;
+}
+
+#services .row{
+    justify-content: center;
+}
+
+#services .card{
+    background-color:dimgray;
+    box-shadow: 3px 3px 7px dimgray,-3px -3px 7px dimgray;
+    border-radius: 2%;
+    color: black;
+}
+
+
+#services .card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-warning:hover{
+    transform: scale(1.05);
+}
+
+#footer{
+    background-color: #ff4f59;
+}
+
+#footer img{
+    width: 3.5vw;
+    height:3.5vw;
+    padding: 0vw;
+    margin-right: 0.8vw;
+}
+
+#footer .media-icons{
+    width:18vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    background-image: url("/images/CarWash.png");
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    padding: auto;
-    opacity: 90%;
+    background-color:#ff4f59;
+    color: black;
+    padding: 0.5vw;
+    font-size: 1.5vw;
 }
 
-.carousel-arrow{
-    opacity: 75%;
-    cursor: pointer;
-    font-size: 7vw;
-    color:black;
+#footer .ph-no{
+    font-size: 1.2vw;
+    font-weight: 500;
+
 }
 
+#footer .div-ph-no{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
 
-#carousel-arrow-r{
-    float: right;
-    display: inline;
 }
 
+#footer-hr2{
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 1.6vw;
+}
 
+.company-info{
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding: 0.5vw;
+    font-size: medium;
+    font-weight: 500;
+}
 /*
 img:hover{
     transform: scale(1.05);
@@ -144,3 +328,94 @@ img:hover{
     -ms-transform: scale(1.05);
     transition: all 0.6s ease 0s;
 }*/
+
+#footer a{
+    text-decoration: none;
+    color:black;
+}
+
+#footer a:hover{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+.fa-copyright{
+    font-size: large;
+}
+
+@media(max-width: 720px){
+    hr.menu-btn-line{
+        width: 7vw;
+        padding: 0.4vw;
+        margin: 1vw;
+    }
+    #menu-btn{
+        padding: 2vw;
+    }
+    #menu-btn-navbar{
+        padding: 2vw;
+    }
+    #tagline{
+        font-size: 3vw;
+        padding-left: 20%;
+    }
+    #company-name{
+        font-size: 7vw;
+    }
+    .login-btn{
+        font-size: 2.8vw;
+    }
+    #nav-bar{
+        width:40vw;
+        margin-top: 0vw;
+    }
+    h4.card-title{
+        font-size: 3vw;
+    }
+    button.btn.btn-warning{
+        font-size: 2.5vw;
+        padding: 0.5vw
+    }
+    #services .col{
+        width: 30%;
+    }
+    #sanitization{
+        padding-bottom: 3.5vw;
+    }
+    #car-washing{
+        padding-bottom: 3.5vw;
+    }
+    h1#services-heading{
+        margin-bottom: 10vw;
+    }
+    #footer .media-icons{
+        width: 40vw;
+        font-size: 3.7vw;
+    }
+    .company-info{
+        width: 100vw;
+        font-size: 2.8vw;
+        padding: 3vw;
+    }
+    #footer .ph-no{
+        width: 40vw;
+        font-size: 3vw;
+    }
+    #footer img{
+        width: 8vw;
+        height: 8vw;
+    }
+
+}
