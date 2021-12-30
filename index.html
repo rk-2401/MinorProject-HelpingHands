@@ -10,27 +10,56 @@
     <link rel="stylesheet" href="style.css">
 
 <!-- Fonts -->
+    <link rel="stylesheet" href="/bootstrap-5.1.2-dist/css/bootstrap.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
 
 <!-- jQuery library -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<!-- font awesome lib -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 <!-- Latest compiled JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel" src="app.js"></script>
-    
+    <script src="/bootstrap-5.1.2-dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+    /*    $(document).ready(function(){
+            document.getElementById('slide1').click();
+            $('.carousel').carousel({
+                interval: 2000
+            })
+        });
+        */
+        setInterval(function(){
+            document.getElementById('next-slide').click();
+        },4000);
+    </script>
 </head>
 <body>
     <div id="root">
     </div>
 </body>
 </html>
-<!---#f36c59    #ff4f59-->
+<!---#f36c59    #ff4f59
+<div><i id="carousel-arrow-l" className="fas fa-angle-left carousel-arrow"></i></div>
+                <div className="carousel-service-desc">Car Cleaning<br/>at your Doorstep!</div>
+                <div><i id="carousel-arrow-r" className="fas fa-angle-right carousel-arrow"></i></div>
+
+
+<div className="dashes">------------</div>
+
+<div id="div-navbar-image">
+                        <img src="/images/Logo.jpg"/>Helping Hands
+                    </div>
+            -->

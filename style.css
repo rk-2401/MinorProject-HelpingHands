@@ -1,46 +1,91 @@
-html,body,div{
+*{
     padding: 0px;
     margin: 0px;
+    padding-block-end: 0px;
+    margin-block-end: 0px;
 }
-html,body{
-    background-color: #ff4f59;
+
+input{
+    float: right;
+    width: 60%;
+    position: relative;
+    border: 0.2vw black solid;
+    border-radius: 0.5vw;
+    color: black;
+    margin-top: 4vw;
+    z-index: 1;
+    color: black;
+}
+
+textarea{
+    resize:none;
+    width: 50%;
+    height: 15%;
+}
+
+.fa-times{
+    position: absolute;
+    font-size: 2.5vw;
+    left:92%;
+    bottom:87%;
+    cursor: pointer;
+}
+
+.hypertext{
+    color:blue;
+    text-decoration: underline;
+}
+
+.login-input{
+    float: none;
 }
 
 #header{
+    z-index: 3;
     display: flex;
     flex-direction: column;
     padding: 0.1vw;
     margin: 0px;
     background-color: #ff4f59;
-    
+    position:sticky;
 }
 
 #div-logo-name{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
+#div-company-logo{
+    padding-top: 0.3vw;
+    margin: 0px;
+}
 #company-logo{
     width: 5vw;
     height:5vw;
+    padding: 0px;
+    margin: 0px;
 }
 
 #company-name{
     color: white;
-    font-size: 2.5vw;
+    font-size: 2.8vw;
     font-family: 'Oleo Script','cursive';
+    margin-bottom: 0px;
+}
+
+#username{
+    font-size: 1vw;
 }
 
 #tagline{
-    margin-left: 3vw;
-    margin-right: 3vw;  
+    padding-left: 35vw;
     font-family: 'Pacifico';
     font-size: 1.5vw;
     color:whitesmoke;
-    background-color:#ffca54;
-    text-align: center;
+    background-color:black;
+    margin-bottom: 0px;
     padding-bottom: 0.4vw;
-    border-radius: 50%;
 }
 
 p{
@@ -48,19 +93,566 @@ p{
     margin-block-end: 0px;
     display: block;
 }
-#nav-bar{
-    padding-right: 0.3vw;
+#menu-btn{
+    padding:1.1vw;
+    cursor: pointer;    
 }
 
-#div-logo-name-navbar{
+#menu-btn-navbar{
+    padding:1.1vw;
+    cursor: pointer;    
+}
+
+.dashes{
+    color: #ff4f59;
+}
+
+#nav-bar {
+    width: 20vw;
+    font-size: larger;
+    font-weight: 600;
+    background-color:black;
+    color: #ff4f59;
+    position: absolute;
+    margin-top: 1.1vw;  
+    margin-left: -0.1vw;
+    padding-left: 1vw;
+    border-bottom-right-radius: 1.5%;
+}
+
+#contact-opt{
+    padding-bottom: 1.2vw;
+}
+
+#home-opt{
+    padding-top: 1vw;
+}
+
+.navbar-options a{
+    text-decoration: none;
+    color: #cf4f59;
+}
+
+.navbar-options a:hover{
+    color: white;
+}
+
+.navbar-options:hover{
+    color: aliceblue;
+    cursor: pointer;
+}
+
+#nav-bar img{
+    width: 2vw;
+    height: 2vw;
+}
+
+.nav-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #cf4f59;
+    color: black;
+}
+#adm-db{
+    height: 20vh;
+    justify-content: space-between;
+    background-color:#ff4f59;
+    text-align: center;
+    margin: auto;
+}
+#adm-db p{
+    background-color: aliceblue;
+    margin: 0vw 30vw 0vw 30vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+#div-navbar-img{
+    display: inline;
+}
+.row-centre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding-bottom: 0.6vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: larger;
+}
+.row-se{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding-bottom: 0.6vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: larger;
+}
+.Col{
+    display: flex;
+    flex-direction: column;
+}
+
+#div-logo-name-header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.nav-line{
+hr.menu-btn-line{
     width: 2.6vw;
-    height: 0.2vw;
-    background-color: whitesmoke;
-    border-radius: 30%;
+    background-color: white;
+    border-radius: 10%;
+    margin: 0.4vw;
+    padding: 0.15vw;
+    opacity: 100%;
+}
+
+.login-btn{
+    font-size: 1.2vw;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #ff4f59;
+    border-radius: 0.5vw;
+    border: none;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+.login-btn:hover{
+    color:black;
+    cursor: pointer;
+}
+
+.form-div{
+    z-index: 3;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(255,255,255, 0.6);
+}
+
+.form{
+    padding-top: 3vw;
+    padding-left: 8vw;
+    background-color:rgba(207,79,89,1);
+    z-index: 3;
+    position: relative;
+    width: 40vw;
+    height: 60vh;
+    top:20vh;
+    left:32vw;
+    border: 1vw solid black;
+    border-radius: 2vw;
+}
+
+#booking-form-div{
+   top:0px;
+    z-index: 4;
+    font-size: 1.2vw;
+    font-weight: 500;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color:rgba(255,255,255, 0.6);
+}
+
+#booking-form{
+    padding-top: 2.2vw;
+    padding-left: 7vw;
+    background-color:rgba(207,79,89,1);
+    z-index: 1;
+    position: relative;
+    width: 44vw;
+    height: max-content;
+    top:2vh;
+    left:30vw;
+    border: 1vw solid black;
+    border-radius: 2vw;
+}
+
+#booking-form p{
+    margin-bottom: 1vh;
+}
+#booking-heading{
+    margin-bottom: -1vh;
+}
+
+#booking-form input
+{
+    width:auto;
+    float:none;
+    padding-left: 0px;
+}
+
+.quantity{
+    width: 3vw !important;
+}
+
+#area{
+    width: 4vw !important;
+}
+
+#booking-form .fa-times{
+    bottom: 91%;
+    left:90%;
+}
+
+#signup-form-div{
+    z-index: 3;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(255,255,255, 0.6);
+    margin: 0%;
+    padding: 0%;
+}
+
+#signup-form{
+    padding-top: 3vw;
+    padding-left: 6vw;
+    background-color:rgba(207,79,89,1);
+    z-index: 3;
+    position: relative;
+    width: 40vw;
+    height: 80vh;
+    top:15vh;
+    left:32vw;
+    border: 1vw solid black;
+    border-radius: 2vw;
+}
+
+.obtn-form{
+    margin-bottom: 2vw;
+    margin-left: 6vw;
+    padding: 0.35vw;
+    font-weight: 500;
+}
+
+label{
+    width: 80%;
+    font-weight: 500;
+}
+
+
+#submit{
+    margin-bottom: 2vw;
+    border: 0.1vw black solid;
+    border-radius: 0.5vw;
+    padding: 0.4vw 0.8vw;
+    background-color: black;
+    color: wheat;
+}
+
+#submit:hover{
+    color: #cf4f59;
+    transform: scale(1.02);
+}
+
+#test-div{
+    background-color: black;
+    width:100vw;
+    height: 100vh;
+}
+#username{
+    font-size: 1.5vw;
+    padding: 0;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-block-end: 0px;
+    color: white;
+}
+#user{
+    display: flex;
+    flex-direction: row;
+    padding: 1.6vw;
+}
+button{
+    cursor: pointer;
+    padding: 0.5vw;
+}
+#user-icon{
+    padding-right: 1vw;
+}
+
+div .carousel-caption{
+    text-align: left;
+    display: inline-block;
+    left: 30%;
+    bottom:30%;
+}
+div .carousel-caption h5{
+    font-size: 4vw;
+}
+div .carousel-item img{
+    opacity: 85%;
+}
+.carousel-indicators{
+    z-index: 1;
+}
+#services-heading{
+    padding: 0.5vw;
+    margin: 4vw 0vw 3.5vw 0vw;
+    display: inline-block;
+    border: black dashed 2px;
+    border-radius: 3%;
+}
+
+#services{
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+
+#services .col{
+    width: 22%;
+    margin: 1vw;
+}
+
+#services .row{
+    justify-content: center;
+}
+
+#services .card{
+    background-color:dimgray;
+    box-shadow: 3px 3px 7px dimgray,-3px -3px 7px dimgray;
+    border-radius: 2%;
+    color: black;
+}
+
+
+#services .card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-warning:hover{
+    transform: scale(1.05);
+}
+
+#footer{
+    background-color: #ff4f59;
+}
+
+#footer img{
+    width: 3.5vw;
+    height:3.5vw;
+    padding: 0vw;
+    margin-right: 0.8vw;
+}
+
+#footer .media-icons{
+    width:18vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding: 0.5vw;
+    font-size: 1.5vw;
+}
+
+#footer .ph-no{
+    font-size: 1.2vw;
+    font-weight: 500;
+
+}
+
+#footer .div-ph-no{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+
+}
+
+#footer-hr2{
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 1.6vw;
+}
+
+.company-info{
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:#ff4f59;
+    color: black;
+    padding: 0.5vw;
+    font-size: medium;
+    font-weight: 500;
+}
+/*
+img:hover{
+    transform: scale(1.05);
+    transition: transform 0.7s;
+    transition: all 0.6s ease 0s;
+    -ms-transform: scale(1.05);
+    transition: all 0.6s ease 0s;
+}*/
+
+#footer a{
+    text-decoration: none;
+    color:black;
+}
+
+#footer a:hover{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+.fa-copyright{
+    font-size: large;
+}
+
+@media(max-width: 720px){
+    hr.menu-btn-line{
+        width: 7vw;
+        padding: 0.4vw;
+        margin: 1vw;
+    }
+    #menu-btn{
+        padding: 2vw;
+    }
+    #menu-btn-navbar{
+        padding: 2vw;
+    }
+    #tagline{
+        font-size: 3vw;
+        padding-left: 20%;
+    }
+    #company-name{
+        font-size: 7vw;
+    }
+    .login-btn{
+        font-size: 2.8vw;
+    }
+    #nav-bar{
+        width:40vw;
+        margin-top: 0vw;
+    }
+    #login-heading{
+        font-size: 7vw;
+        padding-top: 2vw;
+    }
+    .fa-times{
+        font-size: 3.5vw;
+        left:90%;
+        bottom:90%;
+    }
+    .obtn-form{
+        margin-left: 11vw;
+    }
+    .login-input{
+        width:80%;
+    }
+    #signup-form{
+        top: 10vh;
+        left:10vw;
+        width: 80%;
+        height: 85%;
+    }
+    .form{
+        padding-top: 5vh;
+        top: 10vh;
+        left:15vw;
+        width: 70%;
+        height: 75%;
+    }
+    #booking-form{
+        top: 0vh;
+        left:10vw;
+        width: 80%;
+        height: 98%;
+    }
+    #booking-form .fa-times{
+        bottom: 94%;
+        left:92%;
+    }
+    #booking-form input{
+        font-size: 2.8vw;
+        padding: 0vw;
+    }
+    #booking-form{
+        font-size: 2.8vw;
+    }
+    .quantity{
+        width: 5vw !important;
+    }
+    #area{
+        width:7vw !important;
+    }
+    #signup-heading{
+        font-size: 7vw;
+        padding-top: 2vw;
+    }
+    h4.card-title{
+        font-size: 3vw;
+    }
+    button.btn.btn-warning{
+        font-size: 2.5vw;
+        padding: 0.5vw
+    }
+    #services .col{
+        width: 30%;
+    }
+    #sanitization{
+        padding-bottom: 3.5vw;
+    }
+    #car-washing{
+        padding-bottom: 3.5vw;
+    }
+    h1#services-heading{
+        margin-bottom: 10vw;
+    }
+    #footer .media-icons{
+        width: 40vw;
+        font-size: 3.7vw;
+    }
+    .company-info{
+        width: 100vw;
+        font-size: 2.8vw;
+        padding: 3vw;
+    }
+    #footer .ph-no{
+        width: 40vw;
+        font-size: 3vw;
+    }
+    #footer img{
+        width: 8vw;
+        height: 8vw;
+    }
+}
+
+.hypertext{
+    color:blue;
+    text-decoration: underline;
 }
