@@ -1,4 +1,6 @@
 node_modules/
-/src/backend/config/
+/src/backend/config/config.env
 logs/
 .env
+/build/
+.gitignore

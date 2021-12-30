@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-const adminSchema = mongoose.Schema({
+const customerSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     address: {
         addressLine1: {
@@ -37,6 +37,10 @@ const adminSchema = mongoose.Schema({
             unique: true,
         }
     },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    },
 });
 
-export const Admin = mongoose.model('admin', adminSchema);
+export const Customer = mongoose.model('customer', customerSchema);

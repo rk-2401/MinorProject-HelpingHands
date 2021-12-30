@@ -22,15 +22,15 @@ const bookingSchema = new mongoose.Schema({
         default: "PENDING",
     },
     service: {
-        type: Mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'service'
     },
     customer: {
-        type: Mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'customer',
     },
     employee: {
-        type: Mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'employee',
     },
 }, { timestamps: true });

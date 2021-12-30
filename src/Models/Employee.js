@@ -43,7 +43,11 @@ const employeeSchema = new mongoose.Schema({
             required: true,
             unique: true
         },
-    }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    },
 }, { timestamps: true });
 
 export const Employee = mongoose.model('employee', employeeSchema);
