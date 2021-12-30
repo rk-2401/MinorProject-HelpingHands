@@ -1,0 +1,66 @@
+html,body,div{
+    padding: 0px;
+    margin: 0px;
+}
+html,body{
+    background-color: #ff4f59;
+}
+
+#header{
+    display: flex;
+    flex-direction: column;
+    padding: 0.1vw;
+    margin: 0px;
+    background-color: #ff4f59;
+    
+}
+
+#div-logo-name{
+    display: flex;
+    flex-direction: row;
+}
+
+#company-logo{
+    width: 5vw;
+    height:5vw;
+}
+
+#company-name{
+    color: white;
+    font-size: 2.5vw;
+    font-family: 'Oleo Script','cursive';
+}
+
+#tagline{
+    margin-left: 3vw;
+    margin-right: 3vw;  
+    font-family: 'Pacifico';
+    font-size: 1.5vw;
+    color:whitesmoke;
+    background-color:#ffca54;
+    text-align: center;
+    padding-bottom: 0.4vw;
+    border-radius: 50%;
+}
+
+p{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display: block;
+}
+#nav-bar{
+    padding-right: 0.3vw;
+}
+
+#div-logo-name-navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-line{
+    width: 2.6vw;
+    height: 0.2vw;
+    background-color: whitesmoke;
+    border-radius: 30%;
+}
