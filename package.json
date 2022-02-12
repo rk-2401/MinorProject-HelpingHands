@@ -1,0 +1,27 @@
+{
+  "name": "MinorProject-HelpingHands",
+  "version": "1.0.0",
+  "description": "Website for a start-up named Helping Hands",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-babel": "mkdir build && babel -d ./build ./app.js -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Helping-Hands-Minor-Project/HelpingHandsFrontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Helping-Hands-Minor-Project/HelpingHandsFrontend/issues"
+  },
+  "homepage": "https://github.com/Helping-Hands-Minor-Project/HelpingHandsFrontend#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "react": "^17.0.2",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1"
+  }
+}

@@ -9,7 +9,7 @@ input{
     float: right;
     width: 60%;
     position: relative;
-    border: 0.2vw black solid;
+    border: 0.1vw black solid;
     border-radius: 0.5vw;
     color: black;
     margin-top: 4vw;
@@ -241,15 +241,16 @@ hr.menu-btn-line{
 .form{
     padding-top: 3vw;
     padding-left: 8vw;
-    background-color:rgba(207,79,89,1);
+    background-color:hsl(357, 100%,70%);
+    /*color:#ff4f59*/
     z-index: 3;
     position: relative;
     width: 40vw;
     height: 60vh;
     top:20vh;
     left:32vw;
-    border: 1vw solid black;
-    border-radius: 2vw;
+    border:1px solid black;
+    border-radius: 1vw;
 }
 
 #booking-form-div{
@@ -266,15 +267,15 @@ hr.menu-btn-line{
 #booking-form{
     padding-top: 2.2vw;
     padding-left: 7vw;
-    background-color:rgba(207,79,89,1);
+    background-color:hsl(357, 100%,70%);
     z-index: 1;
     position: relative;
     width: 44vw;
     height: max-content;
-    top:2vh;
+    top:1vh;
     left:30vw;
-    border: 1vw solid black;
-    border-radius: 2vw;
+    border: 1px solid black;
+    border-radius: 1vw;
 }
 
 #booking-form p{
@@ -317,15 +318,15 @@ hr.menu-btn-line{
 #signup-form{
     padding-top: 3vw;
     padding-left: 6vw;
-    background-color:rgba(207,79,89,1);
+    background-color:hsl(357, 100%,70%);
     z-index: 3;
     position: relative;
     width: 40vw;
     height: 80vh;
     top:15vh;
     left:32vw;
-    border: 1vw solid black;
-    border-radius: 2vw;
+    border: 1px solid black;
+    border-radius: 1vw;
 }
 
 .obtn-form{
@@ -347,7 +348,7 @@ label{
     border-radius: 0.5vw;
     padding: 0.4vw 0.8vw;
     background-color: black;
-    color: wheat;
+    color: rgb(245, 179, 179);
 }
 
 #submit:hover{
@@ -560,6 +561,7 @@ a:hover{
         margin-top: 0vw;
     }
     #login-heading{
+       
         font-size: 7vw;
         padding-top: 2vw;
     }

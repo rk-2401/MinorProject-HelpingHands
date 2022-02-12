@@ -1,10 +1,17 @@
+import React, { Component } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 var service_charges={
   "car-washing":{
     "basic":300,
     "deluxe":500,
     "premium":800
   },
-  "water-tank-cleaning":300,
+  "water-tank-cleaning":{
+    "500 Ltr":450,
+    "750 Ltr":450,
+    "1000 Ltr":550
+  },
   "sofa-cleaning":250,
   "sanitization":100
 }
@@ -173,36 +180,68 @@ class SignupForm extends React.Component{
        login:false
     }
   }
-  
+  componentDidMount(){
+    
+    const signupForm=document.getElementById('signup-form');
+    signupForm.addEventListener('submit',function(e){
+      e.preventDefault();
+
+      const signupData={
+        name:document.getElementById('su-username').value,
+        mob_no:document.getElementById('su-num').value,
+        email:document.getElementById('su-email').value,
+        address:document.getElementById('su-address').value,
+        password:document.getElementById('su-password').value
+      }
+      console.log(signupData);
+      //helping-hands-backend-qxa3l.ondigitalocean.app
+      axios.post( 'http://localhost:5000/api/v1/user/register' , signupData, {
+        headers: {
+          'Access-Control-Allow-Origin': 'true',
+        }
+      }
+      ).then(function(response){
+        return response.text(); 
+      }).then(function(text){
+        console.log(text);
+      }).catch(function(err){
+        console.error(err);
+      })
+    });
+  }
+  componentWillUnmount(){
+    document.getElementById('signup-form').removeEventListener('submit',()=>{});
+  }
+
   render(){
     return(
-      <div className="form-div" method="post" action="http://localhost:3000">
+      <div className="form-div">
         
         <form id="signup-form" >
           <i className="fa fa-times" onClick={this.props.close}></i> 
           <h1 id="signup-heading">Sign-Up</h1>
           <br/>
           <label >*Name
-            <input type="text" name="name" required></input>
+            <input type="text" id="su-username" name="name" required></input>
           </label>
           <br/><br/>
           <label htmlFor="mobno">*Mobile No.
-          <input type="text" name="mobno" required></input>
+          <input type="text" id="su-num" name="mobno" required></input>
           </label>
           <br/><br/>
           <label htmlFor="email">&nbsp;&nbsp;Email
-          <input type="email" name="email" ></input>
+          <input type="email" id="su-email" name="email" ></input>
           </label>
           <br/><br/>
           <label htmlFor="address">&nbsp;&nbsp;Address
-          <input type="text" name="address" ></input>
+          <input type="text" id="su-address" name="address" ></input>
           </label>
           <br/><br/>
           <label htmlFor="password">*Password
-          <input type="password" name="password"  required></input>
+          <input type="password" id="su-password" name="password"  required></input>
           </label>
           <br/><br/>
-          <button type="submit" id="submit">Submit</button>
+          <button type="submit" id="submit" onClick={this.signUp}>Submit</button>
           <button className="obtn-form" onClick={this.props.loginForm}>Login</button>
         </form>
       </div>
@@ -440,9 +479,13 @@ class BookingForm extends React.Component{
       total+=service_charges["car-washing"][document.getElementById("cw-menu").value.toString()]*document.getElementById("cars").value;
       
     }
-    if(document.getElementById("wtc-serv").checked==true)
+    if(document.getElementById("wtc-serv").checked==true && document.getElementById("wtc-menu").value=="none")
     {
-      total+=service_charges["water-tank-cleaning"]*document.getElementById("tanks").value;
+      alert("Select Tank capacity or uncheck the service!");
+    }
+    else if(document.getElementById("wtc-serv").checked==true)
+    {
+      total+=service_charges["water-tank-cleaning"][document.getElementById("wtc-menu").value.toString()]*document.getElementById("tanks").value;
     }
     if(document.getElementById("sc-serv").checked==true)
     {
@@ -454,7 +497,30 @@ class BookingForm extends React.Component{
     } 
     this.setState({tot:total});
   }
+  componentDidMount(){
+   document.getElementById('booking-form').addEventListener('submit',()=>{
+    if(document.getElementById("cw-serv").checked==true && document.getElementById("cw-menu").value=="none")
+    {
+      alert("Select atleast one category of Car Washing or uncheck the service!");
+    }
+    else if(document.getElementById("wtc-serv").checked==true && document.getElementById("wtc-menu").value=="none")
+    {
+      alert("Select Tank capacity or uncheck the service!");
+    }
+    else if(document.getElementById("sc-serv").checked==false && document.getElementById("snt-serv").checked==false && document.getElementById("cw-serv").checked==false && document.getElementById("wtc-serv").checked==false)
+    {
+      alert("Select atleast one service!");
+      document.getElementById("booking-form").focus;
+    }
+    else{
+     this.props.close();
+
+     alert('Booking Confirmed! A confirmation email has been sent to you.');
+    }
+   })
+  }
   render(){
+    
     return(
       <div id="booking-form-div">
         
@@ -476,10 +542,16 @@ class BookingForm extends React.Component{
             
           <br/><br/>
 
-          <input type="checkbox" id="wtc-serv" value={service_charges["water-tank-cleaning"]}/>&nbsp;Water Tank Cleaning&nbsp;Rs{service_charges["water-tank-cleaning"]}/tank(500L)
+          <input type="checkbox" id="wtc-serv" />&nbsp;Water Tank Cleaning
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No. of tanks&nbsp;<input id="tanks" className="quantity" type="number" defaultValue="1"/>
+          <br/>
+            <select name="tank cleaning" id="wtc-menu">
+              <option value="none">Select a category</option>
+              <option value="500 Ltr">500 Ltr Rs{service_charges["water-tank-cleaning"]["500 Ltr"]}&nbsp;/tank</option>
+              <option value="750 Ltr">750 Ltr Car Washing Rs{service_charges["water-tank-cleaning"]["750 Ltr"]}&nbsp;/tank</option>
+              <option value="1000 Ltr">1000 Ltr Rs{service_charges["water-tank-cleaning"]["1000 Ltr"]}&nbsp;/tank</option>
+            </select>
           <br/><br/>
-
           <input type="checkbox" id="sc-serv" value={service_charges["sofa-cleaning"]}/>&nbsp;Sofa Cleaning&nbsp;Rs{service_charges["sofa-cleaning"]}/seat
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No. of seats&nbsp;<input id="seats" className="quantity" type="number" defaultValue="1"/>
           <br/><br/>
@@ -489,6 +561,8 @@ class BookingForm extends React.Component{
           <br/><br/>
 
           <input  type="text" placeholder="*Mobile no." required></input>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <input  type="email" placeholder="*Email" required></input>
           <br/><br/>
 
           <input type="date" id="datePicker"/>&nbsp;<input type="time"/>
@@ -561,12 +635,12 @@ class App extends React.Component{
     render(){
       if(this.state.adm_login==true)
       return(
-            <div>
-              <Header/>
+            <div id="admin-div">
+              <div><Header/></div>
               <div id="div-tagline"><p id="tagline">Bringing Happiness With Maintenance</p></div>
-              <AdminDashboard/>
-              <Services openForm={this.openForm}/>
-              <Footer/>
+              <div ><AdminDashboard/></div>
+              
+              <div><Footer/></div>
             </div>
       );
       else if(this.state.booking_form==true)
@@ -581,6 +655,10 @@ class App extends React.Component{
             </div>
         );
       else return(
+        <BrowserRouter>
+        <Routes>
+            <Route path='/users/activate/:token' element={<Activate />} />
+        </Routes>
           <div>
                 <Header admin_login={this.admin_login}/>
                 <div id="div-tagline"><p id="tagline">Bringing Happiness With Maintenance</p></div>
@@ -588,8 +666,9 @@ class App extends React.Component{
                 <Services openForm={this.openForm}/>
                 <Footer/>
           </div>
+        </BrowserRouter>
         );
     };
 }
-
 ReactDOM.render(<App/>,document.getElementById('root'));
+;
